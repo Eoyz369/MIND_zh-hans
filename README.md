@@ -1,5 +1,6 @@
 # MIND_zh-hans
 
+即将发布
 [![Docker Pulls](https://img.shields.io/docker/pulls/mrcas/mind.svg)](https://hub.docker.com/r/mrcas/mind)
 
 __一款简单的自托管提醒应用程序，可向您的设备发送推送通知。设置提醒，然后忘掉它！__
