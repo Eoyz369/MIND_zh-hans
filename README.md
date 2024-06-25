@@ -1,42 +1,41 @@
-# MIND
+# MIND_zh-hans
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/mrcas/mind.svg)](https://hub.docker.com/r/mrcas/mind)
 
-__A simple self hosted reminder application that can send push notifications to your device. Set the reminder and forget about it!__
+__一款简单的自托管提醒应用程序，可向您的设备发送推送通知。设置提醒，然后忘掉它！__
 
-Mind is a simple self hosted application for creating reminders that get pushed to your device using the [Apprise](https://github.com/caronc/apprise) API. You can send messages to just about every platform, including scheduled emails!
+Mind 是一款简单的自托管应用程序，用于创建提醒信息，并使用 [Apprise](https://github.com/caronc/apprise) API 将提醒信息推送到您的设备。您可以向几乎所有平台发送信息，包括预定的电子邮件！
 
-## Workings
+## 工作原理
 
-MIND can be used for sending notifications at the desired time. This can be a set time, like a yearly reminder for a birthday, or at a button click, to easily send a predefined notification when you want to. The notification can be sent to 80+ platforms with the integration of [Apprise](https://github.com/caronc/apprise).
-
+MIND 可用于在所需时间发送通知。这可以是一个设定的时间，比如每年的生日提醒，也可以是点击一个按钮，在你想要的时候轻松发送预定义的通知。通过集成 [Apprise](https://github.com/caronc/apprise)，通知可以发送到 80 多个平台。
 ## Features
 
-- Works cross-timezone
+- 跨时区工作
 
-- Notifications are sent with second-precision
+- 以秒为精度发送通知
 
-- Fine control over repetition: single time, time interval, certain weekdays or manual trigger.
+- 可对重复次数进行精细控制：单次、时间间隔、特定工作日或手动触发。
 
-- Uses the [Apprise library](https://github.com/caronc/apprise), giving you 80+ platforms to send notifications to and the option to send to multiple platforms for each reminder
+- 使用 [Apprise 库](https://github.com/caronc/apprise)，可向 80 多个平台发送通知，每个提醒可发送到多个平台
 
-- Easily manage the reminders with sorting options, search ability and color coding
+- 通过排序选项、搜索功能和颜色编码轻松管理提醒事项
 
-- An admin panel for user management, settings and backups
+- 用于用户管理、设置和备份的管理面板
 
-- Docker image available
+- 提供 Docker 映像
 
-- Mobile friendly web-interface
+- 移动友好的网页界面
 
-- API available
+- 提供应用程序接口
 
-## Installation, support and documentation
+## 安装、支持和文档
 
-- For instructions on how to install MIND, see the [installation documentation](https://casvt.github.io/MIND/installation/installation)
+- 有关如何安装 MIND 的说明，请参阅 [安装文档](https://casvt.github.io/MIND/installation/installation)
 
-- For support, a [discord server](https://discord.gg/nMNdgG7vsE) is available or [make an issue](https://github.com/Casvt/MIND/issues)
+- 如需支持，可使用 [discord 服务器](https://discord.gg/nMNdgG7vsE) 或 [提出问题](https://github.com/Casvt/MIND/issues)
 
-- For all documentation, see the [documentation hub](https://casvt.github.io/MIND).
+- 有关所有文档，请参见[文档中心](https://casvt.github.io/MIND)。
 
 ## Screenshots
 
