@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -18,76 +19,105 @@
 	<script src="{{ url_for('static', filename='js/general.js') }}" defer></script>
 	<script src="{{ url_for('static', filename='js/admin.js') }}" defer></script>
 
-	<title>Admin - MIND</title>
+	<title data-lang="title">Admin - MIND</title>
+
+	<style>
+		.language-selector {
+			position: absolute;
+			top: 10px;
+			right: 10px;
+			font-size: 14px;
+		}
+	</style>
 </head>
+</head>
+
 <body>
+	<div class="language-selector">
+		<a href="#" onclick="switchLanguage('en')">English</a> /
+		<a href="#" onclick="switchLanguage('zh')">中文</a>
+	</div>
 	<header>
 		<img src="{{ url_for('static', filename='img/favicon.svg') }}" alt="">
+
 	</header>
 	<main>
 		<section class="action-buttons">
 			<button id="save-button" title="Save Settings" type="submit" form="settings-form">
 				<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="512" height="512">
-					<path d="M12,10a4,4,0,1,0,4,4A4,4,0,0,0,12,10Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,16Z"/>
-					<path d="M22.536,4.122,19.878,1.464A4.966,4.966,0,0,0,16.343,0H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V7.657A4.966,4.966,0,0,0,22.536,4.122ZM17,2.08V3a3,3,0,0,1-3,3H10A3,3,0,0,1,7,3V2h9.343A2.953,2.953,0,0,1,17,2.08ZM22,19a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2V3a5.006,5.006,0,0,0,5,5h4a4.991,4.991,0,0,0,4.962-4.624l2.16,2.16A3.02,3.02,0,0,1,22,7.657Z"/>
+					<path d="M12,10a4,4,0,1,0,4,4A4,4,0,0,0,12,10Zm0,6a2,2,0,1,1,2-2A2,2,0,0,1,12,16Z" />
+					<path
+						d="M22.536,4.122,19.878,1.464A4.966,4.966,0,0,0,16.343,0H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H19a5.006,5.006,0,0,0,5-5V7.657A4.966,4.966,0,0,0,22.536,4.122ZM17,2.08V3a3,3,0,0,1-3,3H10A3,3,0,0,1,7,3V2h9.343A2.953,2.953,0,0,1,17,2.08ZM22,19a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2V3a5.006,5.006,0,0,0,5,5h4a4.991,4.991,0,0,0,4.962-4.624l2.16,2.16A3.02,3.02,0,0,1,22,7.657Z" />
 				</svg>
 			</button>
 			<button id="logout-button" aria-label="Log out of MIND" title="Logout">
-				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256" x="0" y="0" viewBox="0 0 24 24" style="enable-background:new 0 0 512 512" xml:space="preserve">
+				<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+					xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256" x="0" y="0" viewBox="0 0 24 24"
+					style="enable-background:new 0 0 512 512" xml:space="preserve">
 					<g>
-						<path d="M11.476,15a1,1,0,0,0-1,1v3a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2H7.476a3,3,0,0,1,3,3V8a1,1,0,0,0,2,0V5a5.006,5.006,0,0,0-5-5H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H7.476a5.006,5.006,0,0,0,5-5V16A1,1,0,0,0,11.476,15Z"></path>
-						<path d="M22.867,9.879,18.281,5.293a1,1,0,1,0-1.414,1.414l4.262,4.263L6,11a1,1,0,0,0,0,2H6l15.188-.031-4.323,4.324a1,1,0,1,0,1.414,1.414l4.586-4.586A3,3,0,0,0,22.867,9.879Z"></path>
+						<path
+							d="M11.476,15a1,1,0,0,0-1,1v3a3,3,0,0,1-3,3H5a3,3,0,0,1-3-3V5A3,3,0,0,1,5,2H7.476a3,3,0,0,1,3,3V8a1,1,0,0,0,2,0V5a5.006,5.006,0,0,0-5-5H5A5.006,5.006,0,0,0,0,5V19a5.006,5.006,0,0,0,5,5H7.476a5.006,5.006,0,0,0,5-5V16A1,1,0,0,0,11.476,15Z">
+						</path>
+						<path
+							d="M22.867,9.879,18.281,5.293a1,1,0,1,0-1.414,1.414l4.262,4.263L6,11a1,1,0,0,0,0,2H6l15.188-.031-4.323,4.324a1,1,0,1,0,1.414,1.414l4.586-4.586A3,3,0,0,0,22.867,9.879Z">
+						</path>
 					</g>
 				</svg>
 			</button>
 		</section>
 		<div class="form-container">
 			<form id="settings-form">
-				<h2>Authentication</h2>
+				<h2 data-lang="auth-title">Authentication</h2>
 				<div class="settings-table-container">
 					<table class="settings-table">
 						<tbody>
 							<tr>
-								<td><label for="allow-new-accounts-input">Allow New Accounts</label></td>
+								<td><label for="allow-new-accounts-input" data-lang="allow-new-accounts-label">Allow New
+										Accounts</label></td>
 								<td>
 									<input type="checkbox" id="allow-new-accounts-input">
-									<p>Allow users to register a new account. The admin can always add a new account from this panel.</p>
+									<p data-lang="allow-new-accounts-desc">Allow users to register a new account. The
+										admin can always add a new account from this panel.</p>
 								</td>
 							</tr>
 							<tr>
-								<td><label for="login-time-input">Login Time</label></td>
+								<td><label for="login-time-input" data-lang="login-time-label">Login Time</label></td>
 								<td>
 									<div class="number-input">
 										<input type="number" id="login-time-input" min="1" max="43200" required>
 										<p>Min</p>
 									</div>
-									<p>For how long users stay logged in before having to authenticate again. Between 1 minute and 1 month.</p>
-									<p>New values are applied for newly authenticated users.</p>
+									<p data-lang="login-time-desc1">For how long users stay logged in before having to
+										authenticate again. Between 1 minute and 1 month.</p>
+									<p data-lang="login-time-desc2">New values are applied for newly authenticated
+										users.</p>
 								</td>
 							</tr>
 							<tr>
-								<td><label for="login-time-reset-input">Login Time Trigger</label></td>
+								<td><label for="login-time-reset-input" data-lang="login-time-reset-label">Login Time
+										Trigger</label></td>
 								<td>
 									<select id="login-time-reset-input">
-										<option value="true">After Last Use</option>
-										<option value="false">After Login</option>
+										<option value="true" data-lang="after-last-use">After Last Use</option>
+										<option value="false" data-lang="after-login">After Login</option>
 									</select>
-									<p>For when the login timer should start: starting from the last time MIND was used or from when the user has authenticated.</p>
+									<p data-lang="login-time-reset-desc">For when the login timer should start: starting
+										from the last time MIND was used or from when the user has authenticated.</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<h2>Logging</h2>
+				<h2 data-lang="logging-title">Logging</h2>
 				<div class="settings-table-container">
 					<table class="settings-table">
 						<tbody>
 							<tr>
-								<td><label for="log-level-input">Logging Level</label></td>
+								<td><label for="log-level-input" data-lang="log-level-label">Logging Level</label></td>
 								<td>
 									<select id="log-level-input">
-										<option value="20">Info</option>
-										<option value="10">Debug</option>
+										<option value="20" data-lang="log-level-info">Info</option>
+										<option value="10" data-lang="log-level-debug">Debug</option>
 									</select>
 								</td>
 							</tr>
@@ -95,49 +125,60 @@
 					</table>
 				</div>
 				<div class="database-container">
-					<button id="download-logs-button" type="button">Download Debug Logs</button>
+					<button id="download-logs-button" type="button" data-lang="download-logs-button">Download Debug
+						Logs</button>
 				</div>
 			</form>
 			<form id="hosting-form">
-				<h2>Hosting</h2>
+				<h2 data-lang="hosting-title">Hosting</h2>
 				<div class="settings-table-container">
 					<table class="settings-table">
 						<tbody>
 							<tr>
-								<td><label for="host-input">Host</label></td>
+								<td><label for="host-input" data-lang="host-label">Host</label></td>
 								<td>
 									<input type="text" id="host-input" required>
-									<p>Valid IPv4 address (default is '0.0.0.0' for all available interfaces).</p>
+									<p data-lang="host-desc">Valid IPv4 address (default is '0.0.0.0' for all available
+										interfaces).</p>
 								</td>
 							</tr>
 							<tr>
-								<td><label for="port-input">Port</label></td>
+								<td><label for="port-input" data-lang="port-label">Port</label></td>
 								<td>
 									<input type="number" id="port-input" min="1" max="65535" required>
-									<p>The port used to access the web UI (default is '8080').</p>
+									<p data-lang="port-desc">The port used to access the web UI (default is '8080').</p>
 								</td>
 							</tr>
 							<tr>
-								<td><label for="url-prefix-input">URL Prefix</label></td>
+								<td><label for="url-prefix-input" data-lang="url-prefix-label">URL Prefix</label></td>
 								<td>
 									<input type="text" id="url-prefix-input">
-									<p>For reverse proxy support (default is empty).</p>
+									<p data-lang="url-prefix-desc">For reverse proxy support (default is empty).</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
-					<button type="submit" id="save-hosting-button">Save and Restart</button>
+					<button type="submit" id="save-hosting-button" data-lang="save-hosting-button">Save and
+						Restart</button>
 				</div>
-				<p>IMPORTANT: After saving the hosting settings, it is required to log into the admin panel within 1 minute (60 seconds) in order to keep the new hosting settings. Otherwise, MIND will revert the changes and go back to the old hosting settings.</p>
-				<p>See <a href="https://casvt.github.io/MIND/settings/admin_settings#hosting">the documentation</a> for more information.</p>
+				<p data-lang="hosting-note1">IMPORTANT: After saving the hosting settings, it is required to log into
+					the admin panel within 1 minute (60 seconds) in order to keep the new hosting settings. Otherwise,
+					MIND will revert the changes and go back to the old hosting settings.</p>
+				<p data-lang="hosting-note2">See <a
+						href="https://casvt.github.io/MIND/settings/admin_settings#hosting">the documentation</a> for
+					more information.</p>
 			</form>
-			<h2>User Management</h2>
+			<h2 data-lang="user-management-title">User Management</h2>
 			<div class="add-user-container">
 				<button id="add-user-button">
-					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve">
+					<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink"
+						xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256" x="0" y="0" viewBox="0 0 512 512"
+						style="enable-background:new 0 0 512 512" xml:space="preserve">
 						<g>
 							<g>
-								<path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z"></path>
+								<path
+									d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z">
+								</path>
 							</g>
 						</g>
 					</svg>
@@ -147,24 +188,31 @@
 				<form id="add-user-form"></form>
 				<table id="user-table">
 					<thead>
-						<th>User</th>
+						<th data-lang="user-table-user">User</th>
 						<th></th>
-						<th>Actions</th>
+						<th data-lang="user-table-actions">Actions</th>
 					</thead>
 					<tbody id="add-user-row" class="hidden">
 						<tr>
 							<td>
-								<input type="text" id="new-username-input" form="add-user-form" placeholder="Username" required>
+								<input type="text" id="new-username-input" form="add-user-form" placeholder="Username"
+									required>
 							</td>
 							<td>
-								<input type="password" id="new-password-input" form="add-user-form" placeholder="Password" required>
+								<input type="password" id="new-password-input" form="add-user-form"
+									placeholder="Password" required>
 							</td>
 							<td>
 								<button type="submit" form="add-user-form">
-									<svg xmlns="http://www.w3.org/2000/svg" version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" width="256" height="256" x="0" y="0" viewBox="0 0 512 512" style="enable-background:new 0 0 512 512" xml:space="preserve">
+									<svg xmlns="http://www.w3.org/2000/svg" version="1.1"
+										xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs"
+										width="256" height="256" x="0" y="0" viewBox="0 0 512 512"
+										style="enable-background:new 0 0 512 512" xml:space="preserve">
 										<g>
 											<g>
-												<path d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z"></path>
+												<path
+													d="M480,224H288V32c0-17.673-14.327-32-32-32s-32,14.327-32,32v192H32c-17.673,0-32,14.327-32,32s14.327,32,32,32h192v192   c0,17.673,14.327,32,32,32s32-14.327,32-32V288h192c17.673,0,32-14.327,32-32S497.673,224,480,224z">
+												</path>
 											</g>
 										</g>
 									</svg>
@@ -176,38 +224,149 @@
 					</tbody>
 				</table>
 			</div>
-			<h2>Database</h2>
+			<h2 data-lang="database-title">Database</h2>
 			<div class="database-container">
-				<button id="download-db-button">Download Database</button>
+				<button id="download-db-button" data-lang="download-db-button">Download Database</button>
 			</div>
 			<form id="upload-database-form">
 				<div class="settings-table-container">
 					<table class="settings-table">
 						<tbody>
 							<tr>
-								<td><label for="database-file-input">Database File</label></td>
+								<td><label for="database-file-input" data-lang="database-file-label">Database
+										File</label></td>
 								<td><input type="file" id="database-file-input" required></td>
 							</tr>
 							<tr>
-								<td><label for="copy-hosting-input">Keep Hosting Settings</label></td>
+								<td><label for="copy-hosting-input" data-lang="copy-hosting-label">Keep Hosting
+										Settings</label></td>
 								<td>
 									<input type="checkbox" id="copy-hosting-input">
-									<p>Keep the current hosting settings instead of using the settings in the uploaded database.</p>
+									<p data-lang="copy-hosting-desc">Keep the current hosting settings instead of using
+										the settings in the uploaded database.</p>
 								</td>
 							</tr>
 						</tbody>
 					</table>
 				</div>
-				<button type="submit" id="upload-db-button">Import Database</button>
-				<p>IMPORTANT: After uploading the backup, it is required to log into the admin panel within 1 minute (60 seconds) in order to keep the new database file. Otherwise, MIND will revert the upload and go back to the old database.</p>
-				<p>See <a href="https://casvt.github.io/MIND/general_info/admin_panel#database">the documentation</a> for more information.</p>
+				<button type="submit" id="upload-db-button" data-lang="upload-db-button">Import Database</button>
+				<p data-lang="upload-note1">IMPORTANT: After uploading the backup, it is required to log into the admin
+					panel within 1 minute (60 seconds) in order to keep the new database file. Otherwise, MIND will
+					revert the upload and go back to the old database.</p>
+				<p data-lang="upload-note2">See <a
+						href="https://casvt.github.io/MIND/general_info/admin_panel#database">the documentation</a> for
+					more information.</p>
 			</form>
-			<h2>Power</h2>
+			<h2 data-lang="power-title">Power</h2>
 			<div class="database-container">
-				<button id="restart-button">Restart</button>
-				<button id="shutdown-button">Shutdown</button>
+				<button id="restart-button" data-lang="restart-button">Restart</button>
+				<button id="shutdown-button" data-lang="shutdown-button">Shutdown</button>
 			</div>
 		</div>
 	</main>
+
+	<script>
+		const translations = {
+			en: {
+				"title": "Admin - MIND",
+				"auth-title": "Authentication",
+				"allow-new-accounts-label": "Allow New Accounts",
+				"allow-new-accounts-desc": "Allow users to register a new account. The admin can always add a new account from this panel.",
+				"login-time-label": "Login Time",
+				"login-time-desc1": "For how long users stay logged in before having to authenticate again. Between 1 minute and 1 month.",
+				"login-time-desc2": "New values are applied for newly authenticated users.",
+				"login-time-reset-label": "Login Time Trigger",
+				"login-time-reset-desc": "For when the login timer should start: starting from the last time MIND was used or from when the user has authenticated.",
+				"after-last-use": "After Last Use",
+				"after-login": "After Login",
+				"logging-title": "Logging",
+				"log-level-label": "Logging Level",
+				"log-level-info": "Info",
+				"log-level-debug": "Debug",
+				"download-logs-button": "Download Debug Logs",
+				"hosting-title": "Hosting",
+				"host-label": "Host",
+				"host-desc": "Valid IPv4 address (default is '0.0.0.0' for all available interfaces).",
+				"port-label": "Port",
+				"port-desc": "The port used to access the web UI (default is '8080').",
+				"url-prefix-label": "URL Prefix",
+				"url-prefix-desc": "For reverse proxy support (default is empty).",
+				"save-hosting-button": "Save and Restart",
+				"hosting-note1": "IMPORTANT: After saving the hosting settings, it is required to log into the admin panel within 1 minute (60 seconds) in order to keep the new hosting settings. Otherwise, MIND will revert the changes and go back to the old hosting settings.",
+				"hosting-note2": "See the documentation for more information.",
+				"user-management-title": "User Management",
+				"user-table-user": "User",
+				"user-table-actions": "Actions",
+				"database-title": "Database",
+				"download-db-button": "Download Database",
+				"database-file-label": "Database File",
+				"copy-hosting-label": "Keep Hosting Settings",
+				"copy-hosting-desc": "Keep the current hosting settings instead of using the settings in the uploaded database.",
+				"upload-db-button": "Import Database",
+				"upload-note1": "IMPORTANT: After uploading the backup, it is required to log into the admin panel within 1 minute (60 seconds) in order to keep the new database file. Otherwise, MIND will revert the upload and go back to the old database.",
+				"upload-note2": "See the documentation for more information.",
+				"power-title": "Power",
+				"restart-button": "Restart",
+				"shutdown-button": "Shutdown",
+				"save-button-title": "Save Settings",
+				"logout-button-title": "Logout",
+				"logout-button-aria": "Log out of MIND"
+			},
+			zh: {
+				"title": "管理 - MIND",
+				"auth-title": "身份验证",
+				"allow-new-accounts-label": "允许新账户",
+				"allow-new-accounts-desc": "允许用户注册新账户。管理员始终可以从此面板添加新账户。",
+				"login-time-label": "登录时间",
+				"login-time-desc1": "用户在重新验证之前保持登录状态的时间。介于1分钟到1个月之间。",
+				"login-time-desc2": "新值适用于新验证的用户。",
+				"login-time-reset-label": "登录时间触发器",
+				"login-time-reset-desc": "登录计时器应从何时开始：从上次使用MIND开始或从用户验证时开始。",
+				"after-last-use": "上次使用后",
+				"after-login": "登录后",
+				"logging-title": "日志记录",
+				"log-level-label": "日志级别",
+				"log-level-info": "信息",
+				"log-level-debug": "调试",
+				"download-logs-button": "下载调试日志",
+				"hosting-title": "托管",
+				"host-label": "主机",
+				"host-desc": "有效的IPv4地址（默认是'0.0.0.0'用于所有可用接口）。",
+				"port-label": "端口",
+				"port-desc": "用于访问Web UI的端口（默认是'8080'）。",
+				"url-prefix-label": "URL前缀",
+				"url-prefix-desc": "用于反向代理支持（默认是空的）。",
+				"save-hosting-button": "保存并重启",
+				"hosting-note1": "重要：保存托管设置后，必须在1分钟（60秒）内登录管理面板以保持新托管设置。否则，MIND将恢复更改并返回旧托管设置。",
+				"hosting-note2": "查看更多信息，请参阅文档。",
+				"user-management-title": "用户管理",
+				"user-table-user": "用户",
+				"user-table-actions": "操作",
+				"database-title": "数据库",
+				"download-db-button": "下载数据库",
+				"database-file-label": "数据库文件",
+				"copy-hosting-label": "保留托管设置",
+				"copy-hosting-desc": "保留当前托管设置，而不是使用上传的数据库中的设置。",
+				"upload-db-button": "导入数据库",
+				"upload-note1": "重要：上传备份后，必须在1分钟（60秒）内登录管理面板以保持新数据库文件。否则，MIND将恢复上传并返回旧数据库。",
+				"upload-note2": "查看更多信息，请参阅文档。",
+				"power-title": "电源",
+				"restart-button": "重启",
+				"shutdown-button": "关机",
+				"save-button-title": "保存设置",
+				"logout-button-title": "登出",
+				"logout-button-aria": "登出MIND"
+			}
+
+		};
+
+		function switchLanguage(lang) {
+			document.querySelectorAll("[data-lang]").forEach(element => {
+				const key = element.getAttribute("data-lang");
+				element.innerText = translations[lang][key];
+			});
+		}
+	</script>
 </body>
+
 </html>
