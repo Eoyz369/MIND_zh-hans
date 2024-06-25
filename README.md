@@ -33,8 +33,6 @@ MIND 可用于在所需时间发送通知。这可以是一个设定的时间，
 
 - 有关如何安装 MIND 的说明，请参阅 [安装文档](https://casvt.github.io/MIND/installation/installation)
 
-- 如需支持，可使用 [discord 服务器](https://discord.gg/nMNdgG7vsE) 或 [提出问题](https://github.com/Casvt/MIND/issues)
-
 - 有关所有文档，请参见[文档中心](https://casvt.github.io/MIND)。
 
 ## Screenshots
