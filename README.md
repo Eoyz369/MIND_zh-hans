@@ -1,4 +1,4 @@
-# MIND_zh-hans
+# MIND_简体中文
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/eoyz369/mind_zh-hans.svg)](https://hub.docker.com/r/eoyz369/mind_zh-hans)
 
