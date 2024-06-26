@@ -1,0 +1,26 @@
+.language-selector {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 14px;
+    font-weight: bold; 
+    padding: 5px 10px;
+    background-color: #fff; 
+    border: 1px solid #ddd; 
+    border-radius: 4px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    color: #333; 
+    cursor: pointer; 
+    transition: background-color 0.3s, color 0.3s, text-shadow 0.3s; 
+}
+
+.language-selector a {
+    color: #333; 
+    text-decoration: none; 
+}
+
+.language-selector a:hover {
+    color: #000; 
+    text-decoration: none; 
+    text-shadow: 0 0 8px rgba(0, 0, 0, 0.6); 
+}
