@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+	<link rel="shortcut icon" href="{{ url_for('static', filename='img/favicon.svg') }}" type="image/x-icon">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/general.css') }}">
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/page_not_found.css') }}">
+
+	<link rel="stylesheet" href="{{ url_for('static', filename='css/language.css') }}">
+	<title data-lang="title">Page Not Found - MIND</title>
+
+
+</head>
+
+<body>
+	<div class="language-selector">
+		<a href="#" onclick="switchLanguage('en')">English</a> /
+		<a href="#" onclick="switchLanguage('zh')">中文</a>
+	</div>
+
+	<header>
+		<img src="{{ url_for('static', filename='img/favicon.svg') }}" alt="">
+	</header>
+	<main>
+		<h2 data-lang="mind-title">MIND</h2>
+		<p data-lang="not-found-message">404 - Page not found :(</p>
+		<a href="{{url_prefix}}/" data-lang="home-link">Go to home page</a>
+	</main>
+
+	<script>
+		const translations = {
+			en: {
+				"title": "Page Not Found - MIND",
+				"mind-title": "MIND",
+				"not-found-message": "404 - Page not found :(",
+				"home-link": "Go to home page"
+			},
+			zh: {
+				"title": "页面未找到 - MIND",
+				"mind-title": "MIND",
+				"not-found-message": "404 - 页面未找到 :(",
+				"home-link": "返回主页"
+			}
+		};
+
+		function switchLanguage(lang) {
+			document.querySelectorAll("[data-lang]").forEach(element => {
+				const key = element.getAttribute("data-lang");
+				element.innerText = translations[lang][key];
+			});
+			// 更新页面标题
+			document.title = translations[lang]["title"];
+		}
+	</script>
+</body>
+
+</html>
