@@ -1,6 +1,15 @@
 # MIND_简体中文
 
 [![Docker Pulls](https://img.shields.io/docker/pulls/eoyz369/mind_zh-hans.svg)](https://hub.docker.com/r/eoyz369/mind_zh-hans)
+```
+docker run -d \
+--name mind \
+-v /home/docker/mind:/app/db \
+-e TZ=Asia/Shanghai \
+-p 8080:8080 \
+--restart=always \
+eoyz369/mind_zh-hans:latest
+```
 
 __一款简单的自托管提醒应用程序，可向您的设备发送推送通知。设置提醒，然后忘掉它！__
 
