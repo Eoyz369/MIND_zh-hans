@@ -23,11 +23,11 @@ function showAdd(type) {
 
     // 设置按钮和测试提醒的文本内容
     const submitButton = document.querySelector('.options > button[type="submit"]');
-    submitButton.innerText = 'Add';
+    submitButton.innerText = '添加';
     submitButton.setAttribute('data-lang', 'button_Add');
 
     const testReminderDiv = document.querySelector('#test-reminder > div:first-child');
-    testReminderDiv.innerText = 'Test';
+    testReminderDiv.innerText = '测试';
     testReminderDiv.setAttribute('data-lang', 'button_Test');
 
 	const title = document.querySelector('#info h2');
@@ -149,7 +149,7 @@ function showEdit(id, type) {
 		cl.add('show-edit-static-reminder');
 		title.setAttribute('data-lang', 'show-edit-static-reminder');
 		title.innerText = '编辑静态提醒';
-		test_text.innerText = '触发器';
+		test_text.innerText = '测试';
 	} else
 		return;
 };
