@@ -77,6 +77,6 @@ volumes:
 
 ## Screenshots
 
-<img src="https://github.com/Casvt/Kapowarr/assets/88994465/f55c895b-7975-4a3e-88a0-f8e2a148bf8a" style="width: max(45%, 400px); margin: .5rem;">
+<img src="https://github.com/Eoyz369/MIND_zh-hans/blob/Main/Screenshots/114356.png" style="width: max(45%, 400px); margin: .5rem;">
 <img src="https://github.com/Casvt/Kapowarr/assets/88994465/63d72943-0c88-4315-9a8a-01a5dc5f6f15" style="width: max(45%, 400px); margin: .5rem;">
 <img src="https://github.com/Casvt/Kapowarr/assets/88994465/1f9cc9a2-ced5-49a2-b779-93528bb50bd4" style="width: max(45%, 400px); margin: .5rem;">
