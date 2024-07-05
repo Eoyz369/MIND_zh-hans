@@ -58,7 +58,7 @@ eoyz369/mind_zh-hans:latest
 version: "3.3"
 services:
   mind:
-    container_name: mind
+      container_name: mind
       image: eoyz369/mind_zh-hans:latest
       volumes:
         - "mind-db:/app/db"
